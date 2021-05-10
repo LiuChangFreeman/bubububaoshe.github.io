@@ -1,0 +1,370 @@
+.tableinfocontainer{
+  font-family: "FangSong";
+  color: var(--text-hl-color);
+  display: block;
+  overflow: hidden;
+}
+.flexbox{
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+}
+.tableinfocontainer .infoheader{
+  width: 80%;
+  height: 15%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.tableinfocontainer .ccomboinfocontainer, .tableinfocontainer .icomboinfocontainer{
+  display: none;
+  max-height: 85%;
+  overflow: auto;
+}
+.infoheader div{
+  font-size: calc(var(--card-width) * 0.3);
+  cursor: pointer;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: rgba(255, 246, 206, 0.2);
+  box-shadow: 0 0 4px 2px rgba(255, 246, 206, 0.2);
+}
+.charinfocontainer.flexbox {
+  width: calc(var(--card-width)*0.88*7);
+}
+.smallchar {
+    margin: calc(var(--card-width)*0.05) calc(var(--card-width)*0.05) calc(var(--card-width)*0.15);
+}
+.smallcard::before{
+  content: "失效";
+}
+.smallcard {
+  background-color: var(--text-shadow-color);
+  width: calc(var(--card-width) * 0.78);
+  height: calc(var(--card-height) * 0.78);
+  margin: auto;
+  border-radius: 3%;
+  position: relative;
+  color: #aa916f;
+  font-size: calc(var(--card-width) * 0.3);
+  font-weight: bold;
+  font-family: "Arial", "Microsoft Yahei";
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smallcard>div{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background-size: 100% 100%;
+  border-radius: 3%;
+  box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.4);
+  -webkit-box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.4);
+}
+.smallchar>p{
+  font-family: "Microsoft Yahei";
+  color: var(--text-shadow-color);
+  font-size: calc(var(--main-width)*0.013);
+  padding: 0;
+  margin: calc(var(--main-width)*0.003) 0 0 0;
+}
+.combocard{
+  height: calc(var(--card-height)*0.6);
+  width: calc(var(--card-width)*7);
+  margin-bottom: 1%;
+  background-image : linear-gradient(to left,
+                      rgba(58,46,35,0) 8%,
+                      rgba(58,46,35,1)50%,
+                      rgba(58,46,35, 0) 92%);
+
+  -webkit-background-image : linear-gradient(to left,
+                      rgba(58,46,35,0) 8%,
+                      rgba(58,46,35,1)50%,
+                      rgba(58,46,35, 0) 92%);
+}
+.combocard>div{
+  float: left;
+  height: 100%;
+  padding: calc(var(--card-height)*0.05) 0;
+}
+.combocard>div:first-child{
+  width: 37%;
+}
+.combocard>div:last-child{
+  width: 63%;
+  text-align: left;
+  padding-left: 3%;
+}
+
+.combocard .thumbnailcard{
+  width: calc(var(--card-width) * 0.5);
+  height: calc(var(--card-height) * 0.5);
+  background-size: 100% 100%;
+  border-radius: 3%;
+  box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.4);
+  -webkit-box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.4);
+  float: right;
+  }
+
+.combocard .thumbnailcard:not(:first-child){
+  margin-right: calc(var(--card-width) * -0.22);
+}
+
+.combocard #combocardinfo{
+  overflow: auto;
+  width: 100%;
+  font-size: calc(var(--main-width)*0.018);
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image: linear-gradient(to right,
+    rgba(132, 127, 106,0),
+    rgba(132, 127, 106,1) 10%,
+    rgba(132, 127, 106,0) 65%) 100% 1;
+  -webkit-border-image: linear-gradient(to right,
+      rgba(132, 127, 106,0),
+      rgba(132, 127, 106,1) 10%,
+      rgba(132, 127, 106,0) 65%) 100% 1;
+}
+.combocard #combocardinfo div:first-child{
+  float: left;
+  width: 55%;
+}
+.combocard #combocardinfo div:last-child{
+  float: left;
+}
+.combocard #combocardinfo div:last-child::after{
+  content: "分";
+}
+.combocard #combocardchars span{
+  font-size: calc(var(--main-width)*0.013);
+  padding: 0;
+  margin: 0;
+  letter-spacing: -1px;
+}
+.combocard #combocardchars span.notmine{
+  color: var(--text-warning-color);
+}
+.combocard #combocardchars span:not(:last-child)::after{
+  content:"、";
+}
+.tableinfocontainer>.charinfocontainer:first-child>.smallcard>div{
+  -webkit-box-shadow: 0px 0px 10px 1px var(--text-glow-color);
+  box-shadow: 0px 0px 10px 1px var(--text-glow-color);
+  margin-left: calc(50% - var(--card-width) * 0.39);
+}
+.tableinfocontainer>.charinfocontainer:first-child>.smallchar>p{
+  color: var(--text-hl-color);
+  font-size: calc(var(--main-width)*0.017);
+  margin-top: calc(var(--card-height)*0.1);
+}
+.tableinfocontainer>.charinfocontainer:first-child{
+  margin: calc(var(--card-height)*0.1) auto 0;
+}
+
+.hoverinfobox{
+  text-align: left;
+  position: fixed;
+  overflow: hidden;
+}
+.charcontainer>.hoverinfobox{
+  visibility: hidden;
+}
+.charcontainer.faceup>.hoverinfobox, #hand1 .charcontainer>.hoverinfobox, #pool .charcontainer>.hoverinfobox{
+  visibility: visible;
+  width: calc(var(--main-width) * 0.15);
+  height: calc(var(--card-height)*1.5);
+  top: calc(50% - var(--card-height)*0.75);
+  left: calc(50% + var(--main-width)*0.34);
+}
+
+.charcontainer>.hoverinfobox>div{
+  width: calc(var(--main-width) * 0.15);
+  float: left;
+  display: inline-block;
+}
+.charcontainer>.hoverinfobox>div:not(:last-child){
+  margin-bottom: 10%;
+}
+.hoverinfobox .namepanel{
+  color: var(--text-hl-color);
+  font-size: calc(var(--card-width)*0.2);
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-image: linear-gradient(to right,
+    rgba(249, 235, 174,0),
+    rgba(249, 235, 174,1) 30%,
+    rgba(249, 235, 174,0) 100%) 100% 1;
+}
+.hoverinfobox .namepanel>div{
+  margin-bottom: 5%;
+}
+.hoverinfobox .teammatepanel{
+  color: var(--text-glow-color);
+  font-family: "Arial", "Microsoft Yahei";
+}
+.charcontainer>.hoverinfobox>.namepanel>div:first-child{
+  width: 80%;
+  float: left;
+}
+.charcontainer>.hoverinfobox>.namepanel>div:last-child{
+  width: 20%;
+  float: right;
+  text-align: right;
+}
+.namepanel div:last-child span:first-child{
+  font-family: "Arial";
+}
+.namepanel div:last-child span:last-child{
+  padding-left: 15%;
+  font-size: calc(var(--card-width)*0.1);
+}
+.charcontainer.faceup:hover>.hoverinfobox, #hand1 .charcontainer:hover>.hoverinfobox, #pool .charcontainer:hover>.hoverinfobox,
+.charcontainer.faceup:active>.hoverinfobox, #hand1 .charcontainer:active>.hoverinfobox, #pool .charcontainer:active>.hoverinfobox {
+  opacity: 1;
+}
+.charcontainer .hoverinfobox .teammatepanel{
+  font-size: calc(var(--card-width)*0.15);
+}
+.smallchar>.hoverinfobox{
+  width: calc(var(--main-width)*0.17);
+  height: var(--main-height);
+  top: calc(50% - var(--main-height)*0.5);
+  left: calc(50% + var(--main-width)*0.33);
+  background-color: rgba(42, 29, 9, 0.85);
+  z-index: 99;
+  width: 0;
+  transition: width var(--transition-sec);
+}
+.smallchar:hover>.hoverinfobox, .smallchar:active>.hoverinfobox{
+  width: calc(var(--main-width)*0.17);
+}
+.smallchar>.hoverinfobox>div{
+  width: calc(var(--main-width)*0.15);
+  margin-left:calc(var(--main-width)*0.01);
+}
+.smallchar>.hoverinfobox>.namepanel{
+  margin-top: calc(var(--main-width)*0.055);
+}
+.smallchar>.hoverinfobox>.namepanel>div{
+  font-size: calc(var(--card-width)*0.24);
+  margin-bottom: 5%;
+}
+.smallchar>.hoverinfobox>.poempanel{
+  margin-top: calc(var(--main-width)*0.015);
+  font-size: calc(var(--card-width)*0.17);
+}
+.smallchar>.hoverinfobox>.teammatepanel{
+  margin-top: calc(var(--main-width)*0.04);
+}
+.smallchar>.hoverinfobox>.trickpanel{
+  margin-top: calc(var(--main-width)*0.03);
+  font-family: "Arial", "Microsoft Yahei";
+  color: var(--text-glow-color);
+}
+.smallchar>.hoverinfobox>.trickpanel>div{
+  margin: calc(var(--main-width)*0.01) 0 2%;
+}
+.hoverinfobox .poempanel{
+  white-space: pre;
+}
+.smallchar>.hoverinfobox>div:last-child{
+  font-size: calc(var(--card-width)*0.15);
+}
+.specials .smallchar>.hoverinfobox{
+  left: auto;
+  right: calc(50% + var(--main-width)*0.33);
+}
+
+#spselection{
+  width: var(--main-width);
+  height: var(--main-height);
+  position: absolute;
+  top: calc(var(--win-height)/2 - var(--main-height)/2);
+  left: calc(50% - var(--main-width)/2);
+}
+#spselection .selectionarea{
+  width: 83%;
+  height: 100%;
+  float: left;
+  border-right: 1px solid var(--text-shadow-color);
+}
+#spselection .rightsidebar{
+  width: 17%;
+  height: 100%;
+  float: left;
+}
+.selectionarea>div{
+  overflow: auto;
+}
+.selectionarea>div:first-child{
+  height:60%;
+  background-color: var(--board-background);
+  position: relative;
+}
+.selectionarea>div:last-child{
+  height: 40%;
+  background-color: var(--banner-background);
+}
+.selectionarea .charinfocontainer{
+  margin: calc(var(--card-width)*0.1) auto;
+  justify-content: flex-start;
+  width: calc(var(--card-width)*0.88*8);
+}
+.selectionarea .smallchar{
+  margin: calc(var(--card-width)*0.1) calc(var(--card-width)*0.05) 0;
+}
+.selectionarea .smallcard::before{
+  content: "重复";
+}
+.selectionarea .smallchar>.hoverinfobox{
+  height: calc(var(--main-height)*0.8);
+}
+.selectionarea .smallchar>.hoverinfobox .namepanel{
+  margin-top: calc(var(--main-width)*0.03);
+}
+.selectionarea .cover::before{
+  content: "满员";
+}
+.selectionarea .cover{
+  background-color: #ebe6df73;
+  color: var(--text-shadow-color);
+  font-size: var(--card-height);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+.rightsidebar>div:first-child{
+  height: 60%;
+  background-color: var(--board-background);
+}
+.rightsidebar #selectioninfo{
+  font-size: calc(var(--main-height)*0.03);
+  height: 20%;
+  color: var(--text-shadow-color);
+  background-color: var(--banner-background);
+}
+.rightsidebar #gamestart{
+  height: 20%;
+}
+.button{
+  font-size: calc(var(--main-height)*0.05);
+  background-color: var(--text-shadow-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.button:hover, .button:active{
+  font-weight: bold;
+}
